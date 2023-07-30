@@ -1,0 +1,16 @@
+from collections import defaultdict
+
+array = [1, 2, 3, 4]
+ddict = defaultdict()
+
+for i in array:
+    if i not in ddict.keys():
+        ddict[i] = 1
+
+    else:
+        ddict[i] += 1
+        # print(i)
+        break
+
+print(ddict.keys())
+
