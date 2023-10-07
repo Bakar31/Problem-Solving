@@ -1,18 +1,15 @@
-class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
+def twoSum(nums, target):
+    mapping = {}
 
-        mapping = {}
+    for i, j in enumerate(nums):
+        diff = target - j
+        if diff in mapping:
+            return [mapping[diff],  i]
+        
+        mapping[j] = i
+        print(mapping)
 
-        for i, j in enumerate(nums):
-            diff = target - j
-            print(diff)
-
-            if diff in mapping:
-                return [mapping[diff],  i]
-            
-            mapping[j] = i
+nums = [2,7,11,15]
+target = 18
+mapp = twoSum(nums, target)
+print(mapp)
