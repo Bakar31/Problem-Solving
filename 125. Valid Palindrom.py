@@ -10,10 +10,28 @@ def isPalindrome(s: str) -> bool:
     else:
         return False
 
-s = "A man, a plan, a canal: Panama"
-res = isPalindrome(s)
-print(res)
 
-s = "race a car"
-res = isPalindrome(s)
-print(res)
+def is_palindrom2(s):
+    for i in range(len(s)):
+        s_list = list(s)
+        s_list.remove(s[i])
+        print(s_list)
+        new_s = ''.join(s_list)
+        if isPalindrome(new_s):
+            return True
+    return False
+
+
+# s = "A man, a plan, a canal: Panama"
+# res = isPalindrome(s)
+# print(res)
+
+# s = "race a car"
+# res = isPalindrome(s)
+# print(res)
+
+s = "aba"
+print(is_palindrom2(s))
+
+s = "abca"
+print(is_palindrom2(s))
