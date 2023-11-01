@@ -8,26 +8,18 @@ Return k.
 
     """
 
+def removeDuplicates(nums):
+    k = 1
+    set_nums = set(nums)
+    print(set_nums)
+
+    for i in set_nums:
+        count_value = nums.count(i)
+        k += (count_value - 1)
+
+    return len(set_nums)
+
 nums = [0,0,1,1,1,2,2,3,3,4]
-counter = 1
-set_nums = set(nums)
-print(len(set_nums))
-
-for i in set_nums:
-    count_value = nums.count(i)
-    print(count_value)
-    counter += (count_value - 1)
-    print(counter)
-
-print(list(set_nums))
-print(counter)
-
-
-j = 1
-for i in range(1, len(nums)):
-    if nums[i] != nums[i - 1]:
-        nums[j] = nums[i]
-        j += 1
-print(j)
+print(removeDuplicates(nums))
 
 
